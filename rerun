@@ -66,7 +66,7 @@ ignore_until=$(date +%s.%N)
 
 inotifywait --quiet --recursive --monitor --format "%e %w%f" \
     --event modify --event move --event create --event delete \
-    --exclude '__pycache__' \
+    --exclude '__pycache__|target|\.git|\.idea' \
     * | while read changed
 do
 
